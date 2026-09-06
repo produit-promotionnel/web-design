@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقعك الإلكتروني الاحترافي - ضاعف مبيعاتك اليوم</title>
+    <title>متجرنا الإلكتروني - اختاري منتجكِ واطلبيه فوراً</title>
 
     <!-- إعدادات المعاينة للواتساب وفيسبوك -->
-    <meta property="og:title" content="امتلك موقعك الإلكتروني الاحترافي اليوم">
-    <meta property="og:description" content="صمم موقعك الخاص مع زر طلب واتساب مباشر، معرض منتجات، وواجهة عصرية تزيد أرباحك.">
+    <meta property="og:title" content="تسوقي أفضل المنتجات واطلبيها عبر الواتساب">
+    <meta property="og:description" content="تصفحي منتجاتنا المميزة، تعرفي على الأثمنة، واطلبي بكل سهولة بضغطة زر واحدة.">
     <meta property="og:type" content="website">
 
     <style>
         :root {
-            --primary: #2575fc;
-            --secondary: #6a11cb;
-            --accent: #ff6b6b;
+            --primary: #ff4757;
+            --secondary: #2f3542;
             --whatsapp: #25d366;
+            --light: #f1f2f6;
             --dark: #2d3436;
-            --light: #f8f9fa;
         }
 
         * {
@@ -34,9 +33,9 @@
             padding-bottom: 70px;
         }
 
-        /* شريط علوي */
+        /* شريط علوي تحفيزي */
         .top-banner {
-            background: #111;
+            background: var(--secondary);
             color: #fff;
             text-align: center;
             padding: 10px;
@@ -44,137 +43,135 @@
             font-weight: bold;
         }
 
-        /* الهيدر الرئيسي */
+        /* الهيدر */
         header {
-            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            background: linear-gradient(135deg, #ff6b81, var(--primary));
             color: white;
-            padding: 50px 20px;
+            padding: 40px 20px;
             text-align: center;
-            border-bottom-left-radius: 40px;
-            border-bottom-right-radius: 40px;
-            box-shadow: 0 10px 30px rgba(37, 117, 252, 0.3);
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            box-shadow: 0 10px 25px rgba(255, 71, 87, 0.3);
         }
 
         header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 15px;
+            font-size: 2rem;
+            margin-bottom: 10px;
             font-weight: 800;
         }
 
         header p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             max-width: 600px;
-            margin: 0 auto 25px auto;
+            margin: 0 auto;
             opacity: 0.95;
         }
 
-        .cta-btn {
-            display: inline-block;
-            background-color: var(--accent);
-            color: white;
-            padding: 14px 35px;
-            font-size: 1.1rem;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
-            transition: 0.3s;
-        }
-
-        .cta-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(255, 107, 107, 0.6);
-        }
-
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 30px auto;
             padding: 0 20px;
         }
 
         .section-title {
             text-align: center;
-            margin: 30px 0 10px 0;
+            margin: 20px 0 30px 0;
             color: var(--dark);
             font-size: 1.8rem;
             font-weight: 700;
         }
 
-        .section-subtitle {
-            text-align: center;
-            color: #636e72;
-            margin-bottom: 30px;
-            font-size: 0.95rem;
-        }
-
-        /* شبكة المميزات */
-        .features-grid {
+        /* شبكة المنتجات */
+        .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
             margin-bottom: 40px;
         }
 
-        .feature-card {
+        .product-card {
             background: white;
-            padding: 25px 20px;
             border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-img-container {
+            width: 100%;
+            height: 220px;
+            background-color: #e4e4e4;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
             text-align: center;
-            border-top: 4px solid var(--primary);
         }
 
-        .feature-card span {
-            font-size: 2.2rem;
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .feature-card h3 {
-            color: var(--primary);
-            font-size: 1.15rem;
+        .product-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--secondary);
             margin-bottom: 8px;
         }
 
-        .feature-card p {
-            color: #636e72;
-            font-size: 0.9rem;
+        .product-desc {
+            font-size: 0.85rem;
+            color: #747d8c;
+            margin-bottom: 15px;
+            flex-grow: 1;
         }
 
-        /* قسم طلب الموقع المباشر */
-        .order-card {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            text-align: center;
+        .product-price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 15px;
         }
 
-        .order-card p {
-            margin-bottom: 25px;
-            color: #555;
-            font-size: 1.05rem;
-        }
-
-        .whatsapp-direct-btn {
-            display: inline-block;
+        .buy-btn {
             background-color: var(--whatsapp);
             color: white;
-            padding: 16px 40px;
-            font-size: 1.2rem;
-            text-decoration: none;
+            border: none;
+            padding: 12px;
             border-radius: 50px;
+            font-size: 1rem;
             font-weight: bold;
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-            transition: 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+            transition: 0.2s;
         }
 
-        .whatsapp-direct-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
+        .buy-btn:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
         }
 
-        /* زر الواتساب العائم الثابت */
+        /* زر واتساب عائم */
         .floating-whatsapp {
             position: fixed;
             bottom: 25px;
@@ -201,7 +198,7 @@
         footer {
             text-align: center;
             padding: 25px;
-            background-color: #2d3436;
+            background-color: var(--secondary);
             color: white;
             font-size: 0.9rem;
             margin-top: 50px;
@@ -211,59 +208,74 @@
 <body>
 
     <div class="top-banner">
-        🔥 عرض خاص لفترة محدودة: امتلك موقعك الإلكتروني الخاص واجذب المزيد من الزبائن!
+        🚚 التوصيل متوفر لجميع المدن - اطلبي منتجكِ الآن عبر الواتساب!
     </div>
 
     <header>
-        <h1>هل تملك مشروعاً وتريد مضاعفة مبيعاتك؟</h1>
-        <p>نصمم لك واجهة إلكترونية احترافية، أنيقة، وسريعة لتعرض منتجاتك أو خدماتك وتستقبل طلبات الزبائن بضغطة زر واحدة عبر الواتساب.</p>
-        <a href="https://api.whatsapp.com/send?phone=212702159063&text=مرحباً، أهتم بالحصول على موقع إلكتروني لمشروعي وأريد معرفة التفاصيل" class="cta-btn" target="_blank">اطلب موقعك الآن 🚀</a>
+        <h1>متجرنا المميز</h1>
+        <p>تصفحي المنتجات أدناه، اختاري ما يناسبكِ، واضغطِ على زر الشراء ليتم تحويلكِ مباشرة إلى الواتساب لإتمام طلبكِ.</p>
     </header>
 
     <div class="container">
         
-        <h2 class="section-title">ماذا ستحصل عليه في موقعك؟</h2>
-        <p class="section-subtitle">مميزات متكاملة تجعل مشروعك يبدو كبرى الشركات</p>
+        <h2 class="section-title">قائمة المنتجات المتوفرة</h2>
 
-        <div class="features-grid">
-            <div class="feature-card">
-                <span>📱</span>
-                <h3>تصميم متجاوب</h3>
-                <p>يعرض بسلاسة فائقة واحترافية على الهواتف الذكية والحواسيب.</p>
+        <div class="products-grid">
+
+            <!-- المنتج الأول -->
+            <div class="product-card">
+                <div class="product-img-container">
+                    <!-- ضعي هنا رابط صورة المنتج الأولى -->
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=500&q=80" alt="منتج 1">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">مجموعة العناية بالبشرة الفاخرة</h3>
+                    <p class="product-desc">مكونات طبيعية 100% لتصفية وترطيب البشرة وإعطائها إشراقة طبيعية.</p>
+                    <div class="product-price">199 درهم</div>
+                    <a href="https://api.whatsapp.com/send?phone=212702159063&text=مرحباً، أود طلب هذا المنتج: *مجموعة العناية بالبشرة الفاخرة* بسعر *199 درهم*" class="buy-btn" target="_blank">
+                        🛒 اطلبي عبر الواتساب
+                    </a>
+                </div>
             </div>
 
-            <div class="feature-card">
-                <span>💬</span>
-                <h3>زر واتساب مباشر</h3>
-                <p>يمكن زبونك من مراسلتك وطلب المنتج أو الخدمة فوراً بنقرة واحدة.</p>
+            <!-- المنتج الثاني -->
+            <div class="product-card">
+                <div class="product-img-container">
+                    <!-- ضعي هنا رابط صورة المنتج الثانية -->
+                    <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=500&q=80" alt="منتج 2">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">عطر الأنوثة الساحر</h3>
+                    <p class="product-desc">عطر ثابت يدوم طوال اليوم برائحة فريدة ومميزة تناسب كل الأوقات.</p>
+                    <div class="product-price">250 درهم</div>
+                    <a href="https://api.whatsapp.com/send?phone=212702159063&text=مرحباً، أود طلب هذا المنتج: *عطر الأنوثة الساحر* بسعر *250 درهم*" class="buy-btn" target="_blank">
+                        🛒 اطلبي عبر الواتساب
+                    </a>
+                </div>
             </div>
 
-            <div class="feature-card">
-                <span>⭐</span>
-                <h3>آراء وثقة العملاء</h3>
-                <p>أقسام مخصصة لشهادات الزبائن لزيادة المصداقية والمبيعات.</p>
+            <!-- المنتج الثالث -->
+            <div class="product-card">
+                <div class="product-img-container">
+                    <!-- ضعي هنا رابط صورة المنتج الثالث -->
+                    <img src="https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=500&q=80" alt="منتج 3">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">مجموعة المكياج الاحترافي</h3>
+                    <p class="product-desc">ألوان ثابتة وعصرية تلبي كافة احتياجاتك لإطلالة ساحرة ومبهرة.</p>
+                    <div class="product-price">320 درهم</div>
+                    <a href="https://api.whatsapp.com/send?phone=212702159063&text=مرحباً، أود طلب هذا المنتج: *مجموعة المكياج الاحترافي* بسعر *320 درهم*" class="buy-btn" target="_blank">
+                        🛒 اطلبي عبر الواتساب
+                    </a>
+                </div>
             </div>
 
-            <div class="feature-card">
-                <span>⚡</span>
-                <h3>سرعة عالية وسهولة</h3>
-                <p>تحميل سريع جداً وخالٍ من التعقيدات ليناسب جميع الزبائن.</p>
-            </div>
-        </div>
-
-        <!-- بطاقة الطلب المباشر -->
-        <div class="order-card">
-            <h2 style="color: var(--secondary); margin-bottom: 15px;">جاهز لبدء مشروعك الرقمي؟</h2>
-            <p>لا تضيع الوقت، تواصل معنا الآن عبر الواتساب لنناقش تفاصيل موقعك ونبدأ في تنفيذه فوراً.</p>
-            <a href="https://api.whatsapp.com/send?phone=212702159063&text=مرحباً، أريد الاستفسار عن تصميم موقع إلكتروني لمشروعي" class="whatsapp-direct-btn" target="_blank">
-                💬 تواصل معنا عبر الواتساب
-            </a>
         </div>
 
     </div>
 
-    <!-- زر واتساب عائم يأخذ الزبون مباشرة لرقمك -->
-    <a href="https://api.whatsapp.com/send?phone=212702159063&text=مرحباً، جئت من إعلان الموقع وأريد تصميم موقع خاص بي" class="floating-whatsapp" target="_blank" title="تواصل معنا عبر الواتساب">
+    <!-- زر واتساب عائم رئيسي -->
+    <a href="https://api.whatsapp.com/send?phone=212702159063&text=مرحباً، أريد الاستفسار عن المنتجات" class="floating-whatsapp" target="_blank" title="تواصل معنا عبر الواتساب">
         💬
     </a>
 
