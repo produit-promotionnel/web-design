@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متجرنا الإلكتروني - اختاري منتجكِ واطلبيه فوراً</title>
+    <title>خدمة تصميم المتاجر الإلكترونية - بيعي منتجاتك عبر الواتساب بكل سهولة</title>
 
     <!-- إعدادات المعاينة للواتساب وفيسبوك -->
-    <meta property="og:title" content="تسوقي أفضل المنتجات واطلبيها عبر الواتساب">
-    <meta property="og:description" content="تصفحي منتجاتنا المميزة، تعرفي على الأثمنة، واطلبي بكل سهولة بضغطة زر واحدة.">
+    <meta property="og:title" content="اصنعي متجرك الإلكتروني الخاص لبيع منتجاتك عبر الواتساب">
+    <meta property="og:description" content="نصمم لك متجراً متكاملاً يعرض منتجاتك بأثمنتها مع زر طلب مباشر للواتساب وتكبير الصور.">
     <meta property="og:type" content="website">
 
     <style>
         :root {
-            --primary: #ff4757;
-            --secondary: #2f3542;
+            --primary: #4834d4;
+            --secondary: #6c5ce7;
+            --accent: #ff6b6b;
             --whatsapp: #25d366;
-            --light: #f1f2f6;
             --dark: #2d3436;
+            --light: #f4f6f9;
         }
 
         * {
@@ -27,73 +28,99 @@
         }
 
         body {
-            background-color: var(--light);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             color: var(--dark);
+            min-height: 100vh;
             line-height: 1.6;
             padding-bottom: 70px;
         }
 
-        /* شريط علوي تحفيزي */
+        /* شريط علوي ترويجي */
         .top-banner {
-            background: var(--secondary);
-            color: #fff;
-            text-align: center;
+            background-color: #1a1a2e;
+            color: #dfe6e9;
             padding: 10px;
-            font-size: 0.9rem;
+            text-align: center;
+            font-size: 0.95rem;
             font-weight: bold;
         }
 
-        /* الهيدر */
+        /* الهيدر الترويجي لخدمتك */
         header {
-            background: linear-gradient(135deg, #ff6b81, var(--primary));
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            padding: 40px 20px;
+            padding: 50px 20px;
             text-align: center;
-            border-bottom-left-radius: 30px;
-            border-bottom-right-radius: 30px;
-            box-shadow: 0 10px 25px rgba(255, 71, 87, 0.3);
+            clip-path: ellipse(150% 100% at 50% 0%);
+            box-shadow: 0 10px 30px rgba(108, 92, 231, 0.3);
+            margin-bottom: 30px;
         }
 
         header h1 {
-            font-size: 2rem;
-            margin-bottom: 10px;
+            font-size: 2.3rem;
+            margin-bottom: 15px;
             font-weight: 800;
         }
 
         header p {
-            font-size: 1rem;
-            max-width: 600px;
-            margin: 0 auto;
+            font-size: 1.15rem;
+            max-width: 700px;
+            margin: 0 auto 25px auto;
             opacity: 0.95;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--whatsapp);
+            color: white;
+            padding: 15px 35px;
+            font-size: 1.15rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(37, 211, 102, 0.6);
         }
 
         .container {
             max-width: 1000px;
-            margin: 30px auto;
+            margin: 0 auto;
             padding: 0 20px;
         }
 
         .section-title {
             text-align: center;
-            margin: 20px 0 30px 0;
+            margin: 40px 0 10px 0;
             color: var(--dark);
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 700;
         }
 
-        /* شبكة المنتجات */
+        .section-subtitle {
+            text-align: center;
+            color: #636e72;
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+        }
+
+        /* شبكة المنتجات (مثال حي لمتجر الزبونة) */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         .product-card {
             background: white;
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
             display: flex;
             flex-direction: column;
             transition: transform 0.3s ease;
@@ -103,20 +130,38 @@
             transform: translateY(-5px);
         }
 
-        .product-img-container {
+        .product-img-box {
             width: 100%;
-            height: 220px;
-            background-color: #e4e4e4;
-            overflow: hidden;
+            height: 230px;
+            background: #f1f2f6;
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
         }
 
-        .product-img-container img {
+        .product-img-box img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .product-img-box:hover img {
+            transform: scale(1.05);
+        }
+
+        .zoom-hint {
+            position: absolute;
+            bottom: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            opacity: 0.9;
         }
 
         .product-info {
@@ -128,23 +173,23 @@
         }
 
         .product-title {
-            font-size: 1.2rem;
+            color: var(--primary);
+            font-size: 1.25rem;
             font-weight: bold;
-            color: var(--secondary);
             margin-bottom: 8px;
         }
 
         .product-desc {
-            font-size: 0.85rem;
-            color: #747d8c;
+            color: #636e72;
+            font-size: 0.9rem;
             margin-bottom: 15px;
             flex-grow: 1;
         }
 
         .product-price {
-            font-size: 1.3rem;
+            font-size: 1.35rem;
             font-weight: bold;
-            color: var(--primary);
+            color: var(--accent);
             margin-bottom: 15px;
         }
 
@@ -162,7 +207,7 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
             transition: 0.2s;
         }
 
@@ -171,36 +216,93 @@
             transform: scale(1.02);
         }
 
-        /* زر واتساب عائم */
+        /* نافذة تكبير الصورة (Modal) */
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 85vh;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            object-fit: contain;
+            animation: zoomIn 0.3s ease;
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .close-modal:hover {
+            color: var(--accent);
+        }
+
+        /* زر واتساب عائم مطور واحترافي */
         .floating-whatsapp {
             position: fixed;
             bottom: 25px;
             left: 25px;
             background-color: var(--whatsapp);
             color: white;
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 35px;
+            gap: 10px;
+            padding: 12px 20px;
+            border-radius: 50px;
             box-shadow: 0 5px 20px rgba(37, 211, 102, 0.6);
             z-index: 1000;
             text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            animation: pulse-whatsapp 2s infinite;
             transition: transform 0.3s ease;
         }
 
+        .floating-whatsapp svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
+        }
+
         .floating-whatsapp:hover {
-            transform: scale(1.1);
+            transform: scale(1.08);
+        }
+
+        @keyframes pulse-whatsapp {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
         footer {
             text-align: center;
-            padding: 25px;
-            background-color: var(--secondary);
+            padding: 30px;
+            background-color: var(--dark);
             color: white;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             margin-top: 50px;
         }
     </style>
@@ -208,31 +310,34 @@
 <body>
 
     <div class="top-banner">
-        🚚 التوصيل متوفر لجميع المدن - اطلبي منتجكِ الآن عبر الواتساب!
+        💡 هذا نموذج لمتجرك القادم! نصنع لك مثله تماماً لتعرض منتجاتك وتباع بكل سهولة.
     </div>
 
     <header>
-        <h1>متجرنا المميز</h1>
-        <p>تصفحي المنتجات أدناه، اختاري ما يناسبكِ، واضغطِ على زر الشراء ليتم تحويلكِ مباشرة إلى الواتساب لإتمام طلبكِ.</p>
+        <h1>هل تملكين منتجات وتبيعينها؟ اصنعي متجرك الخاص الآن!</h1>
+        <p>نصمم لكِ موقعاً احترافياً تماماً مثل هذا: يعرض منتجاتك مع أثمنتها، يتيح لزبائنك تكبير الصور، ويحتوي على زر طلب مباشر للواتساب.</p>
+        <a href="https://api.whatsapp.com/send?phone=212702159063&text=مرحباً، أريد تصميم متجر إلكتروني لبيع منتجاتي بكل سهولة" class="cta-btn" target="_blank">اطلبي متجرك الخاص الآن 📲</a>
     </header>
 
     <div class="container">
         
-        <h2 class="section-title">قائمة المنتجات المتوفرة</h2>
+        <h2 class="section-title">نموذج حي: هكذا سيرى زبائنك منتجاتك</h2>
+        <p class="section-subtitle">اضغطي على أي صورة أدناه لتجربة خاصية تكبيرها بوضوح:</p>
 
+        <!-- شبكة المنتجات مع أثمنة وخاصية التكبير -->
         <div class="products-grid">
 
             <!-- المنتج الأول -->
             <div class="product-card">
-                <div class="product-img-container">
-                    <!-- ضعي هنا رابط صورة المنتج الأولى -->
+                <div class="product-img-box" onclick="openModal('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80')">
                     <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=500&q=80" alt="منتج 1">
+                    <span class="zoom-hint">🔍 اضغطي لتكبير الصورة</span>
                 </div>
                 <div class="product-info">
-                    <h3 class="product-title">مجموعة العناية بالبشرة الفاخرة</h3>
-                    <p class="product-desc">مكونات طبيعية 100% لتصفية وترطيب البشرة وإعطائها إشراقة طبيعية.</p>
+                    <h3 class="product-title">مجموعة العناية بالبشرة</h3>
+                    <p class="product-desc">مكونات طبيعية 100% لتصفية وترطيب البشرة.</p>
                     <div class="product-price">199 درهم</div>
-                    <a href="https://api.whatsapp.com/send?phone=212702159063&text=مرحباً، أود طلب هذا المنتج: *مجموعة العناية بالبشرة الفاخرة* بسعر *199 درهم*" class="buy-btn" target="_blank">
+                    <a href="https://api.whatsapp.com/send?phone=212702159063&text=مرحباً، أود طلب هذا المنتج: *مجموعة العناية بالبشرة* بسعر *199 درهم*" class="buy-btn" target="_blank">
                         🛒 اطلبي عبر الواتساب
                     </a>
                 </div>
@@ -240,13 +345,13 @@
 
             <!-- المنتج الثاني -->
             <div class="product-card">
-                <div class="product-img-container">
-                    <!-- ضعي هنا رابط صورة المنتج الثانية -->
+                <div class="product-img-box" onclick="openModal('https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=800&q=80')">
                     <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=500&q=80" alt="منتج 2">
+                    <span class="zoom-hint">🔍 اضغطي لتكبير الصورة</span>
                 </div>
                 <div class="product-info">
                     <h3 class="product-title">عطر الأنوثة الساحر</h3>
-                    <p class="product-desc">عطر ثابت يدوم طوال اليوم برائحة فريدة ومميزة تناسب كل الأوقات.</p>
+                    <p class="product-desc">عطر ثابت يدوم طوال اليوم برائحة مميزة.</p>
                     <div class="product-price">250 درهم</div>
                     <a href="https://api.whatsapp.com/send?phone=212702159063&text=مرحباً، أود طلب هذا المنتج: *عطر الأنوثة الساحر* بسعر *250 درهم*" class="buy-btn" target="_blank">
                         🛒 اطلبي عبر الواتساب
@@ -256,13 +361,13 @@
 
             <!-- المنتج الثالث -->
             <div class="product-card">
-                <div class="product-img-container">
-                    <!-- ضعي هنا رابط صورة المنتج الثالث -->
+                <div class="product-img-box" onclick="openModal('https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=800&q=80')">
                     <img src="https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=500&q=80" alt="منتج 3">
+                    <span class="zoom-hint">🔍 اضغطي لتكبير الصورة</span>
                 </div>
                 <div class="product-info">
                     <h3 class="product-title">مجموعة المكياج الاحترافي</h3>
-                    <p class="product-desc">ألوان ثابتة وعصرية تلبي كافة احتياجاتك لإطلالة ساحرة ومبهرة.</p>
+                    <p class="product-desc">ألوان ثابتة وعصرية لإطلالة ساحرة ومبهرة.</p>
                     <div class="product-price">320 درهم</div>
                     <a href="https://api.whatsapp.com/send?phone=212702159063&text=مرحباً، أود طلب هذا المنتج: *مجموعة المكياج الاحترافي* بسعر *320 درهم*" class="buy-btn" target="_blank">
                         🛒 اطلبي عبر الواتساب
@@ -274,14 +379,35 @@
 
     </div>
 
-    <!-- زر واتساب عائم رئيسي -->
-    <a href="https://api.whatsapp.com/send?phone=212702159063&text=مرحباً، أريد الاستفسار عن المنتجات" class="floating-whatsapp" target="_blank" title="تواصل معنا عبر الواتساب">
-        💬
+    <!-- نافذة تكبير الصورة (Modal) -->
+    <div id="imageModal" class="image-modal" onclick="closeModal()">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+
+    <!-- زر واتساب عائم احترافي وثابت مع تأثير حركي -->
+    <a href="https://api.whatsapp.com/send?phone=212702159063&text=مرحباً، أريد تصميم متجر إلكتروني لبيع منتجاتي" class="floating-whatsapp" target="_blank" title="تواصل عبر الواتساب">
+        <svg viewBox="0 0 32 32"><path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 8.14-2.108c2.348 1.282 5.011 1.958 7.86 1.958 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.333c-2.435 0-4.81-0.654-6.883-1.89l-0.493-0.297-5.111 1.323 1.365-4.981-0.32-0.512c-1.348-2.158-2.062-4.662-2.062-7.234 0-7.359 5.987-13.346 13.346-13.346 7.359 0 13.346 5.987 13.346 13.346s-5.987 13.346-13.346 13.346zM22.387 19.972c-0.365-0.183-2.159-1.065-2.493-1.187-0.333-0.122-0.575-0.183-0.817 0.183-0.243 0.365-0.939 1.187-1.151 1.43-0.213 0.243-0.426 0.274-0.79 0.091-2.015-1.008-3.337-1.801-4.669-4.108-0.354-0.61 0.354-0.567 1.014-1.894 0.122-0.243 0.061-0.456-0.03-0.639s-0.817-1.968-1.12-2.697c-0.295-0.711-0.596-0.615-0.817-0.627s-0.456-0.012-0.7-0.012c-0.243 0-0.639 0.091-0.973 0.456-0.333 0.365-1.272 1.243-1.272 3.033s1.303 3.519 1.485 3.762c0.183 0.243 2.562 3.913 6.208 5.485 3.646 1.572 3.646 1.048 4.303 0.983 0.658-0.065 2.159-0.883 2.463-1.737 0.304-0.854 0.304-1.585 0.213-1.737-0.091-0.152-0.333-0.243-0.698-0.426z"></path></svg>
+        تواصل معنا
     </a>
 
     <footer>
-        <p>جميع الحقوق محفوظة © 2026</p>
+        <p>جميع الحقوق محفوظة © 2026 - خدمة تصميم المتاجر الرقمية</p>
     </footer>
+
+    <script>
+        // دوال تكبير وإغلاق الصور
+        function openModal(imgSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImg');
+            modal.style.display = "flex";
+            modalImg.src = imgSrc;
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = "none";
+        }
+    </script>
 
 </body>
 </html>
